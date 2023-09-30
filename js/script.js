@@ -15,13 +15,17 @@ const clearInput = function(){
     guestInput.value = "";
 }
 
+const addToList = function(guest){
+    const listItem = document.createElement("li")
+    listItem.innerText = guest
+    guestList.append(listItem)
+}
+
 addGuestButton.addEventListener("click", function(){
     const guest = guestInput.value;
     //console.log(guest);
     if (guest !== "") {
-        let listItem = document.createElement("li")
-        listItem.innerText = guest
-        guestList.append(listItem)
+        addToList(guest)
         clearInput()
     }
 })
